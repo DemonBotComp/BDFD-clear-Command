@@ -1,0 +1,49 @@
+~~CODE~~
+--------------------------------------------------------------------------------------------------
+pt.1)
+Trigger: Mclear <amount>
+Script: BDScript 2
+--------------------------------------------------------------------------------------------------
+
+
+$nomention
+
+$botTyping
+
+$clear[$message]
+
+$title[**Clearing**]
+$description[<@$authorID> has cleared $message messages successfully!]
+$deleteIn[5s]
+
+$deletecommand
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+pt.2)
+Trigger: Mclear
+Script: BDScript 2
+--------------------------------------------------------------------------------------------------
+$nomention
+
+$addButton[no;Verify;Verify you as a Admin or Bot!;secondary;no;]
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+pt.3)
+Trigger: $onInteraction[Verify]
+Script: BDScript 2
+--------------------------------------------------------------------------------------------------
+$nomention
+
+Admin --- $username is Admin $isAdmin[$authorID]
+Bot   --- $username is Bot $isBot[$authorID]
+
+$botTyping
+
+$title[<@$authorID>'s Stauts]
+$description[Your Admin Status is $isAdmin[$authorID], and your Bot Status is $isBot[$authorID]]
+$footer[**Message will message will be deleted in `5s`**]
+$deleteIn[5s]
+--------------------------------------------------------------------------------------------------
+~~END~~
